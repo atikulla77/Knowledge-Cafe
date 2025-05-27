@@ -1,7 +1,7 @@
 import React from "react";
 import { LuBookmark } from "react-icons/lu";
 
-const Blog = ({ blogs }) => {
+const Blog = ({ blogs, handleAddToBookmarks }) => {
   return (
     <div className="w-[845px]">
       {/* Card */}
@@ -31,7 +31,8 @@ const Blog = ({ blogs }) => {
                 <h1 className="text-[20px] font-[500] text-[#111111] opacity-[60%] pr-[5px]">
                   {blog.reading_time} min read
                 </h1>
-                <LuBookmark className="text-[22px] text-[#111111] opacity-[60%] cursor-pointer" />
+                {/* Bookmark */}
+                <LuBookmark onClick={() => handleAddToBookmarks(blog)} className="text-[22px] text-[#111111] opacity-[60%] cursor-pointer" />
               </div>
             </div>
             <div className="pt-[1.2rem]">

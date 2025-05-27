@@ -1,0 +1,31 @@
+import React from "react";
+
+const Bookmarks = () => {
+    return (
+        <div className="w-[411px]">
+            <div className="w-full h-[80px] border-[1px] border-[#6047EC] bg-[#6047ec29] rounded-[8px] flex justify-center items-center text-center">
+                <h1 className="text-[#6047EC] text-[24px] font-[700]">
+                    Spent time on read : 0 min
+                </h1>
+            </div>
+            <div className="w-full bg-[#11111112] rounded-[8px] p-[2rem] mt-[1.5rem]">
+                <h1 className="text-[24px] text-[#111111] font-[700]">
+                    Bookmarked Blogs : 0
+                </h1>
+                {/* BookMarked ---- Cards */}
+                <div className="w-full h-[98px] bg-white rounded-[8px] mt-[1rem] p-[1.1rem]">
+                    <h1 className="text-[18px] font-[600] leading-[30px]">
+                        Master Microsoft Power Platform and Become an In-Demand!
+                    </h1>
+                </div>
+                <div className="w-full h-[98px] bg-white rounded-[8px] mt-[1rem] p-[1.1rem]">
+                    <h1 className="text-[18px] font-[600] leading-[30px]">
+                        Master Microsoft Power Platform and Become an In-Demand!
+                    </h1>
+                </div>
+            </div>
+        </div>
+    );
+};
+
+export default Bookmarks;

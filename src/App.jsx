@@ -1,11 +1,29 @@
+import { useEffect, useState } from 'react';
 import './App.css'
+import Blog from './components/Blog'
 import Header from './components/Header'
+import Bookmarks from './components/Bookmarks';
 
 function App() {
+  const [blogs, setBlogs] = useState([]);
+
+  useEffect(() => {
+    fetch("blogs.json")
+      .then(res => res.json())
+      .then(data => setBlogs(data))
+  }, []);
+
+  console.log(blogs)
 
   return (
     <div className='w-[1280px] h-full mx-auto exo2font'>
-      <Header/>
+
+      <Header />
+
+      <div className='w-full pt-[2rem] flex justify-between pb-[20rem]'>
+        <Blog blogs={blogs} />
+        <Bookmarks />
+      </div>
 
     </div>
   )

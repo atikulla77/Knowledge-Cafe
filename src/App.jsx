@@ -17,17 +17,16 @@ function App() {
 
   const handleAddToBookmarks = (blog) => {
     let updatedBookmarks;
-    let totalReadingTime;
-
     if (!bookmarks.includes(blog)) {
       updatedBookmarks = [...bookmarks, blog];
-      totalReadingTime = bookmarksSpentTime + blog.reading_time;
     } else {
       updatedBookmarks = [...bookmarks];
-      totalReadingTime = bookmarksSpentTime;
     }
-
     setBookmarks(updatedBookmarks)
+  }
+
+  const handleSpentTimeOnRead = (blog) => {
+    let totalReadingTime = bookmarksSpentTime + blog.reading_time;
     setBookmarksSpentTime(totalReadingTime)
   }
 
@@ -37,7 +36,7 @@ function App() {
       <Header />
 
       <div className='w-full pt-[2rem] flex justify-between pb-[20rem]'>
-        <Blog blogs={blogs} handleAddToBookmarks={handleAddToBookmarks} />
+        <Blog blogs={blogs} handleAddToBookmarks={handleAddToBookmarks} handleSpentTimeOnRead={handleSpentTimeOnRead} />
         <Bookmarks bookmarks={bookmarks} bookmarksSpentTime={bookmarksSpentTime} />
       </div>
 

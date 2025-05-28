@@ -25,6 +25,12 @@ function App() {
     setBookmarks(updatedBookmarks)
   }
 
+  const handleRemoveToBookmarks = (id) => {
+    const remainingBookmarks = bookmarks.filter((bookmark) => bookmark.id !== id);
+    console.log(remainingBookmarks)
+    setBookmarks(remainingBookmarks);
+  }
+
   const handleSpentTimeOnRead = (blog) => {
     let totalReadingTime = bookmarksSpentTime + blog.reading_time;
     setBookmarksSpentTime(totalReadingTime)
@@ -36,7 +42,7 @@ function App() {
       <Header />
 
       <div className='w-full pt-[2rem] flex justify-between pb-[20rem]'>
-        <Blog blogs={blogs} handleAddToBookmarks={handleAddToBookmarks} handleSpentTimeOnRead={handleSpentTimeOnRead} />
+        <Blog blogs={blogs} handleAddToBookmarks={handleAddToBookmarks} handleSpentTimeOnRead={handleSpentTimeOnRead} handleRemoveToBookmarks={handleRemoveToBookmarks} />
         <Bookmarks bookmarks={bookmarks} bookmarksSpentTime={bookmarksSpentTime} />
       </div>
 
